@@ -2,7 +2,7 @@
    Honky Tonk · Troy, MO — Redesign 2026
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Ultra&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ultra&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow+Condensed:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap');
 
 /* ---------- TOKENS ---------- */
 :root {
@@ -1451,6 +1451,106 @@ address a:hover {
   color: rgba(245,232,208,.3) !important;
   letter-spacing: 0 !important;
   margin-top: 16px !important;
+}
+
+/* ============ LLI CREDIT PILL ============ */
+@keyframes lli-credit-border-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+.lli-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 16px 6px 6px;
+  border-radius: 999px;
+  background: #05070a; /* Fallback for browsers not supporting the complex gradient */
+  position: relative;
+  border: 1.5px solid transparent;
+  background-image: linear-gradient(#05070a, #05070a),
+                    linear-gradient(115deg,
+                      rgba(0,102,255,0.55) 0%,
+                      rgba(110,55,210,0.30) 38%,
+                      rgba(255,138,0,0.55) 68%,
+                      rgba(0,102,255,0.55) 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: auto, 250% 250%;
+  animation: lli-credit-border-shift 7s ease infinite;
+  text-decoration: none;
+  line-height: 1;
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.lli-credit:hover { transform: translateY(-1px); }
+.lli-credit__mark {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  padding: 3px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.lli-credit__mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.lli-credit__label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+.lli-credit__faint {
+  color: #A6A9B3;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.lli-credit__sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  display: inline-block;
+  flex-shrink: 0;
+}
+.lli-credit__brand {
+  color: #fff;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.lli-credit__it { color: #FF8A00; }
+
+@media (max-width: 480px) {
+  .lli-credit {
+    padding: 5px 12px 5px 5px;
+    gap: 7px;
+  }
+  .lli-credit__faint {
+    font-size: 9px;
+  }
+  .lli-credit__brand {
+    font-size: 10px;
+  }
+}
+
+.footer-credit {
+  text-align: center;
+  margin-top: 32px;
+  padding-bottom: 20px;
 }
 
 /* ============================================================

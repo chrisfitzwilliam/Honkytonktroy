@@ -1,0 +1,17 @@
+# Build artifacts
+honky-tonk-troy-website-v4.zip
+
+# Old WordPress content
+v4/
+
+# Random/temp files
+14829189451464286765_sample_0.mp4
+
+# Tool directories
+.claude/
+.playwright-mcp/
+.superpowers/
+
+# OS
+.DS_Store
+Thumbs.db

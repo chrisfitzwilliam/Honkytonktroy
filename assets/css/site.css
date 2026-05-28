@@ -239,44 +239,69 @@ body.splash-active .site-header { display: none; }
 .bottom-tabs {
   display: none;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  left: 12px;
+  right: 12px;
   z-index: 99;
-  background: var(--bg-dark);
-  border-top: 1px solid rgba(168,95,29,.28);
-  padding: 6px 0 max(6px, env(safe-area-inset-bottom));
+  min-height: 58px;
+  background:
+    linear-gradient(180deg, rgba(54,24,16,.96), rgba(20,10,8,.98));
+  border: 1px solid rgba(212,166,74,.28);
+  border-radius: 7px;
+  padding: 6px;
   flex-direction: row;
+  gap: 4px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.06);
 }
 .bottom-tabs a {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 3px;
+  min-width: 0;
+  min-height: 46px;
   text-decoration: none;
-  color: rgba(245,232,208,.55);
+  color: rgba(245,232,208,.68);
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 9px;
-  letter-spacing: .12em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  transition: color .15s ease;
-  padding: 4px 0;
+  transition: color .15s ease, background-color .15s ease, transform .15s ease;
+  padding: 5px 2px;
+  border-radius: 5px;
 }
 .bottom-tabs a.is-current,
-.bottom-tabs a:hover { color: var(--rust-bd); }
-.bottom-tabs .bt-ico { display: flex; }
-.bt-call {
-  background: var(--rust);
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  margin-top: -14px;
-  color: var(--cream) !important;
-  flex: 0 0 48px;
-  box-shadow: 0 4px 14px rgba(0,0,0,.38);
+.bottom-tabs a:hover {
+  color: var(--gold);
+  background: rgba(212,166,74,.1);
 }
-.bt-call .bt-label { display: none; }
+.bottom-tabs a:active {
+  transform: translateY(1px);
+}
+.bottom-tabs .bt-ico {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-tabs .bt-ico svg {
+  width: 20px;
+  height: 20px;
+}
+.bottom-tabs .bt-action {
+  flex: 1.1;
+  color: var(--cream);
+  background: linear-gradient(180deg, var(--rust-bd), var(--rust));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14);
+}
+.bottom-tabs .bt-action:hover {
+  color: #fff;
+  background: linear-gradient(180deg, var(--gold), var(--rust-bd));
+}
 
 /* ---------- SPLASH STATES ---------- */
 body.splash-active {

@@ -1,6 +1,7 @@
-/* Honky Tonk Troy — mobile parallax for .parallax-break sections.
-   On viewports <= 860px (and all iOS), translates each section's ::before
-   pseudo-element on scroll via the --parallax-y custom property. */
+/* Honky Tonk Troy — iOS-only parallax fallback for .parallax-break sections.
+   Every other browser uses CSS background-attachment: fixed. iOS Safari
+   doesn't paint fixed attachment, so on iOS we translate each section's
+   ::before pseudo-element on scroll via the --parallax-y custom property. */
 
 (function () {
   'use strict';
@@ -11,18 +12,16 @@
   }
 
   ready(function () {
+    const isIOS = window.CSS && CSS.supports && CSS.supports('-webkit-touch-callout', 'none');
+    if (!isIOS) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const sections = Array.from(document.querySelectorAll('.parallax-break'));
     if (!sections.length) return;
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (reducedMotion.matches) return;
-
-    const mobileMQ = window.matchMedia('(max-width: 860px)');
-
     const active = new Set();
     let ticking = false;
-    let observer = null;
-    let enabled = false;
 
     function update() {
       ticking = false;
@@ -47,39 +46,16 @@
       }
     }
 
-    function enable() {
-      if (enabled) return;
-      enabled = true;
-      observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) active.add(entry.target);
-          else active.delete(entry.target);
-        });
-        if (active.size) onScroll();
-      }, { rootMargin: '20% 0px' });
-      sections.forEach(function (s) { observer.observe(s); });
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll, { passive: true });
-    }
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) active.add(entry.target);
+        else active.delete(entry.target);
+      });
+      if (active.size) onScroll();
+    }, { rootMargin: '20% 0px' });
+    sections.forEach(function (s) { observer.observe(s); });
 
-    function disable() {
-      if (!enabled) return;
-      enabled = false;
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-      if (observer) { observer.disconnect(); observer = null; }
-      active.clear();
-      sections.forEach(function (s) { s.style.removeProperty('--parallax-y'); });
-    }
-
-    function evaluate() {
-      if (mobileMQ.matches) enable();
-      else disable();
-    }
-
-    if (mobileMQ.addEventListener) mobileMQ.addEventListener('change', evaluate);
-    else if (mobileMQ.addListener) mobileMQ.addListener(evaluate);
-
-    evaluate();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
   });
 })();

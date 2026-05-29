@@ -668,27 +668,8 @@ body.splash-entered .video-landing {
   .pb-patio::before  { background-image: url("../../images/bg-patio.jpg"); }
 }
 
-@media (max-width: 860px) {
-  .parallax-break { background-image: none; }
-  .parallax-break::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -15%;
-    height: 130%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    will-change: transform;
-    transform: translate3d(0, var(--parallax-y, 0), 0);
-  }
-  .pb-crowd::before  { background-image: url("../../images/bg-crowd.jpg"); }
-  .pb-guitar::before { background-image: url("../../images/bg-live-music.jpg"); }
-  .pb-patio::before  { background-image: url("../../images/bg-patio.jpg"); }
-}
-
 @media (prefers-reduced-motion: reduce) {
+  .parallax-break { background-attachment: scroll; }
   .parallax-break::before { transform: none; }
 }
 

@@ -457,54 +457,17 @@ body.splash-entered .video-landing {
 
 .hero-logo-heading {
   margin: 0 0 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   max-width: 100%;
-  position: relative;
-  background: radial-gradient(ellipse at 50% 38%, #3d1a0f 10%, #1a0808 100%);
-  border: 1px solid rgba(212,166,74,.55);
-  border-radius: 10px;
-  padding: 28px 44px;
-  box-shadow:
-    0 10px 48px rgba(0,0,0,.55),
-    0 2px 8px rgba(0,0,0,.4),
-    inset 0 0 60px rgba(212,166,74,.07);
-}
-.hero-logo-heading::before {
-  content: '';
-  position: absolute;
-  inset: 7px;
-  border: 1px solid rgba(212,166,74,.22);
-  border-radius: 5px;
-  pointer-events: none;
-}
-.hero-logo-heading::after {
-  content: '';
-  position: absolute;
-  inset: 4px;
-  background-image:
-    linear-gradient(rgba(212,166,74,.7), rgba(212,166,74,.7)),
-    linear-gradient(rgba(212,166,74,.7), rgba(212,166,74,.7)),
-    linear-gradient(rgba(212,166,74,.7), rgba(212,166,74,.7)),
-    linear-gradient(rgba(212,166,74,.7), rgba(212,166,74,.7)),
-    linear-gradient(rgba(212,166,74,.7), rgba(212,166,74,.7)),
-    linear-gradient(rgba(212,166,74,.7), rgba(212,166,74,.7)),
-    linear-gradient(rgba(212,166,74,.7), rgba(212,166,74,.7)),
-    linear-gradient(rgba(212,166,74,.7), rgba(212,166,74,.7));
-  background-size: 1px 18px, 18px 1px, 1px 18px, 18px 1px, 1px 18px, 18px 1px, 1px 18px, 18px 1px;
-  background-position: 0 0, 0 0, 100% 0, 100% 0, 0 100%, 0 100%, 100% 100%, 100% 100%;
-  background-repeat: no-repeat;
-  pointer-events: none;
+  padding: 0;
+  filter: drop-shadow(0 10px 32px rgba(0,0,0,.55)) drop-shadow(0 0 24px rgba(212,166,74,.18));
 }
 
 .hero-logo {
   width: 100%;
-  max-width: 420px;
+  max-width: 720px;
   height: auto;
   display: block;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-lede {
@@ -1678,8 +1641,8 @@ address a:hover {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .hero-logo-heading {
-    padding: 20px 28px;
+  .hero-logo {
+    max-width: 95vw;
   }
 
   .hero-photos {

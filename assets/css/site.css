@@ -639,8 +639,8 @@ body.splash-entered .video-landing {
 }
 
 .pb-crowd  { background-image: url("../../images/packed-night.jpg"); }
-.pb-guitar { background-image: url("../../images/drummer-mural.jpg"); }
-.pb-patio  { background-image: url("../../images/bar-crowd-mural.jpg"); }
+.pb-guitar { background-image: url("../../images/bg-live-music-hd.jpg"); }
+.pb-patio  { background-image: url("../../images/bg-western-bar-hd.jpg"); }
 
 /* iOS doesn't support background-attachment: fixed — fall back to scroll */
 @supports (-webkit-touch-callout: none) {

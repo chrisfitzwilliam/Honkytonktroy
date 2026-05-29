@@ -640,9 +640,9 @@ body.splash-entered .video-landing {
   background-repeat: no-repeat;
 }
 
-.pb-crowd  { background-image: url("../../images/Gemini_Generated_Image_p8d2dcp8d2dcp8d2.png"); }
-.pb-guitar { background-image: url("../../images/bg-live-music-hd.jpg"); }
-.pb-patio  { background-image: url("../../images/bg-western-bar-hd.jpg"); }
+.pb-crowd  { background-image: url("../../images/bg-crowd.jpg"); }
+.pb-guitar { background-image: url("../../images/bg-live-music.jpg"); }
+.pb-patio  { background-image: url("../../images/bg-patio.jpg"); }
 
 /* Mobile / iOS: JS-driven parallax via translated ::before pseudo-element.
    iOS Safari doesn't support background-attachment: fixed, and we disable
@@ -663,9 +663,9 @@ body.splash-entered .video-landing {
     will-change: transform;
     transform: translate3d(0, var(--parallax-y, 0), 0);
   }
-  .pb-crowd::before  { background-image: url("../../images/Gemini_Generated_Image_p8d2dcp8d2dcp8d2.png"); }
-  .pb-guitar::before { background-image: url("../../images/bg-live-music-hd.jpg"); }
-  .pb-patio::before  { background-image: url("../../images/bg-western-bar-hd.jpg"); }
+  .pb-crowd::before  { background-image: url("../../images/bg-crowd.jpg"); }
+  .pb-guitar::before { background-image: url("../../images/bg-live-music.jpg"); }
+  .pb-patio::before  { background-image: url("../../images/bg-patio.jpg"); }
 }
 
 @media (max-width: 860px) {
@@ -683,9 +683,9 @@ body.splash-entered .video-landing {
     will-change: transform;
     transform: translate3d(0, var(--parallax-y, 0), 0);
   }
-  .pb-crowd::before  { background-image: url("../../images/Gemini_Generated_Image_p8d2dcp8d2dcp8d2.png"); }
-  .pb-guitar::before { background-image: url("../../images/bg-live-music-hd.jpg"); }
-  .pb-patio::before  { background-image: url("../../images/bg-western-bar-hd.jpg"); }
+  .pb-crowd::before  { background-image: url("../../images/bg-crowd.jpg"); }
+  .pb-guitar::before { background-image: url("../../images/bg-live-music.jpg"); }
+  .pb-patio::before  { background-image: url("../../images/bg-patio.jpg"); }
 }
 
 @media (prefers-reduced-motion: reduce) {

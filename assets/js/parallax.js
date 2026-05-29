@@ -35,7 +35,7 @@
         let progress = (viewportCenter - sectionCenter) / denom;
         if (progress > 1) progress = 1;
         else if (progress < -1) progress = -1;
-        const y = progress * rect.height * 0.15;
+        const y = progress * rect.height * 0.22;
         el.style.setProperty('--parallax-y', y.toFixed(2) + 'px');
       });
     }

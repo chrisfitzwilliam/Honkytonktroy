@@ -19,6 +19,12 @@
     window.location.href = destination;
   }
 
+  // bfcache: Android Chrome restores the page from memory on back navigation,
+  // preserving the entered=true flag and breaking the button on second visit.
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) entered = false;
+  });
+
   function onWheel(e) {
     if (e.deltaY > 0) enterSite();
   }

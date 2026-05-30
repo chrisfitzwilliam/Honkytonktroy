@@ -240,97 +240,98 @@ body.splash-active .site-header { display: none; }
   display: none;
   position: fixed;
   bottom: max(10px, env(safe-area-inset-bottom));
-  left: 12px;
-  right: 12px;
+  left: 14px;
+  right: 14px;
   z-index: 99;
-  min-height: 64px;
-  background: linear-gradient(180deg, rgba(28,17,14,.72), rgba(14,10,10,.8));
-  -webkit-backdrop-filter: blur(14px) saturate(1.05);
-  backdrop-filter: blur(14px) saturate(1.05);
-  border: 1px solid rgba(245,232,208,.16);
-  border-radius: 14px;
-  padding: 7px;
+  min-height: 62px;
+  background: linear-gradient(180deg, rgba(30,18,15,.78), rgba(13,9,9,.86));
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
+  backdrop-filter: blur(16px) saturate(1.08);
+  border: 1px solid rgba(240,191,94,.22);
+  border-radius: 34px;
+  padding: 6px;
   flex-direction: row;
-  gap: 5px;
+  gap: 2px;
   box-shadow:
-    0 8px 24px rgba(0,0,0,.34),
-    inset 0 1px 0 rgba(255,255,255,.08);
+    0 10px 30px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,247,240,.10);
 }
 .bottom-tabs a {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
   min-width: 0;
-  min-height: 52px;
+  min-height: 50px;
   text-decoration: none;
-  color: rgba(245,232,208,.8);
+  color: rgba(245,232,208,.74);
   font-family: 'Poppins', system-ui, -apple-system, sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: .04em;
-  transition: color .2s ease, background-color .2s ease, transform .15s ease;
-  padding: 4px 2px 5px;
-  border-radius: 10px;
-  --bt-icon-primary: #fff7f0;
-  --bt-icon-secondary: #d4a64a;
-  --bt-icon-tertiary: #fff7f0;
-  --bt-icon-quaternary: #f0bf5e;
+  transition: color .2s ease;
+  padding: 4px 2px;
+  border-radius: 28px;
+}
+/* Gold capsule behind the active / pressed tab */
+.bottom-tabs a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffcd6a, #e0a945);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    0 4px 12px rgba(0,0,0,.28);
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity .22s ease, transform .22s cubic-bezier(.34,1.56,.64,1);
+  z-index: 0;
+}
+.bottom-tabs a.is-current::before,
+.bottom-tabs a:active::before {
+  opacity: 1;
+  transform: scale(1);
 }
 .bottom-tabs a.is-current,
-.bottom-tabs a:hover {
-  color: #f7dfa5;
-  background: rgba(212,166,74,.08);
-  --bt-icon-primary: #fff7f0;
-  --bt-icon-secondary: #f0bf5e;
-  --bt-icon-tertiary: #fff7f0;
-  --bt-icon-quaternary: #ffcd6a;
-}
 .bottom-tabs a:active {
-  transform: translateY(1px);
+  color: #2a1c14;
+  font-weight: 700;
 }
 .bottom-tabs .bt-ico {
+  position: relative;
+  z-index: 1;
   display: flex;
-  width: 38px;
-  height: 38px;
+  width: 28px;
+  height: 28px;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  border: 1px solid rgba(245,232,208,.2);
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.04));
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.12),
-    0 2px 8px rgba(0,0,0,.18);
-  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
-}
-.bottom-tabs a.is-current .bt-ico,
-.bottom-tabs a:hover .bt-ico {
-  border-color: rgba(240,191,94,.56);
-  background: linear-gradient(180deg, rgba(240,191,94,.28), rgba(240,191,94,.12));
-  box-shadow:
-    inset 0 1px 0 rgba(255,247,240,.22),
-    0 3px 10px rgba(0,0,0,.22);
-}
-.bottom-tabs .bt-ico lord-icon {
-  width: 27px;
-  height: 27px;
-  --lord-icon-primary: var(--bt-icon-primary);
-  --lord-icon-secondary: var(--bt-icon-secondary);
-  --lord-icon-tertiary: var(--bt-icon-tertiary);
-  --lord-icon-quaternary: var(--bt-icon-quaternary);
-}
-.bottom-tabs .bt-ico lord-icon img {
-  width: 27px;
-  height: 27px;
-  filter: brightness(1.35) contrast(1.06);
 }
 .bottom-tabs .bt-label {
+  position: relative;
+  z-index: 1;
   display: block;
   line-height: 1;
   white-space: nowrap;
+}
+/* Force every multicolor CDN icon into a single brand-gold tone */
+.bottom-tabs .bt-ico lord-icon,
+.bottom-tabs .bt-ico lord-icon img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) saturate(100%) invert(78%) sepia(54%)
+          saturate(560%) hue-rotate(338deg) brightness(101%) contrast(94%);
+}
+/* On the gold capsule, flip the icon to dark espresso for contrast */
+.bottom-tabs a.is-current .bt-ico lord-icon,
+.bottom-tabs a.is-current .bt-ico lord-icon img,
+.bottom-tabs a:active .bt-ico lord-icon,
+.bottom-tabs a:active .bt-ico lord-icon img {
+  filter: brightness(0) saturate(100%) invert(11%) sepia(28%)
+          saturate(900%) hue-rotate(347deg) brightness(95%) contrast(92%);
 }
 
 /* ---------- SPLASH STATES ---------- */

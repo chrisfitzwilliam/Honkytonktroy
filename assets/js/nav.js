@@ -52,13 +52,34 @@
     }
 
     /* ----- Menu tabs ----- */
-    const tabs = document.querySelectorAll('.menu-tab');
+    const tabs = Array.from(document.querySelectorAll('.menu-tab'));
     const panels = document.querySelectorAll('.menu-panel');
+
+    function selectMenuTab(tab) {
+      tabs.forEach(t => {
+        const active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', String(active));
+        t.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach(p => p.classList.toggle('is-active', p.id === tab.dataset.target));
+    }
+
     tabs.forEach(tab => {
       tab.addEventListener('click', function () {
-        const target = tab.dataset.target;
-        tabs.forEach(t => t.classList.toggle('is-active', t === tab));
-        panels.forEach(p => p.classList.toggle('is-active', p.id === target));
+        selectMenuTab(tab);
+      });
+      tab.addEventListener('keydown', function (event) {
+        let index = tabs.indexOf(tab);
+        if (event.key === 'ArrowRight') index = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') index = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') index = 0;
+        else if (event.key === 'End') index = tabs.length - 1;
+        else return;
+
+        event.preventDefault();
+        selectMenuTab(tabs[index]);
+        tabs[index].focus();
       });
     });
 

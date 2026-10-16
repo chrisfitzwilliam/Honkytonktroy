@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="../images/11.png">
   <link rel="preload" as="image" href="../images/bg-crowd.jpg">
-  <link rel="stylesheet" href="../assets/css/site.css?v=20260530-pill-nav-1">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20261016-menus">
   <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
 </head>
 <body>
@@ -192,34 +192,25 @@
       <span class="kicker">Kitchen menu</span>
       <h2>The Menu.</h2>
       <p class="section-sub">dine in · carry out · come hungry</p>
+      <div class="menu-downloads" aria-label="Printable menus">
+        <a class="btn" href="../assets/menus/honky-tonk-troy-menu.pdf" target="_blank" rel="noopener">Main Menu (PDF)<span class="sr-only"> — opens in a new tab</span></a>
+        <a class="btn" href="../assets/menus/honky-tonk-troy-breakfast-menu.pdf" target="_blank" rel="noopener">Breakfast Menu (PDF)<span class="sr-only"> — opens in a new tab</span></a>
+      </div>
     </div>
 
     <div class="menu-tabs" role="tablist" aria-label="Menu sections">
-      <button class="menu-tab is-active" data-target="menu-apps"   type="button">Appetizers</button>
-      <button class="menu-tab"           data-target="menu-salads" type="button">Salads</button>
-      <button class="menu-tab"           data-target="menu-sand"   type="button">Sandwiches</button>
-      <button class="menu-tab"           data-target="menu-wraps"  type="button">Wraps</button>
-      <button class="menu-tab"           data-target="menu-burg"   type="button">Burgers</button>
+      <button class="menu-tab is-active" id="tab-menu-apps" data-target="menu-apps" type="button" role="tab" aria-controls="menu-apps" aria-selected="true" tabindex="0">Appetizers</button>
+      <button class="menu-tab" id="tab-menu-salads" data-target="menu-salads" type="button" role="tab" aria-controls="menu-salads" aria-selected="false" tabindex="-1">Salads</button>
+      <button class="menu-tab" id="tab-menu-sand" data-target="menu-sand" type="button" role="tab" aria-controls="menu-sand" aria-selected="false" tabindex="-1">Sandwiches</button>
+      <button class="menu-tab" id="tab-menu-wraps" data-target="menu-wraps" type="button" role="tab" aria-controls="menu-wraps" aria-selected="false" tabindex="-1">Wraps</button>
+      <button class="menu-tab" id="tab-menu-burg" data-target="menu-burg" type="button" role="tab" aria-controls="menu-burg" aria-selected="false" tabindex="-1">Burgers</button>
+      <button class="menu-tab" id="tab-menu-breakfast" data-target="menu-breakfast" type="button" role="tab" aria-controls="menu-breakfast" aria-selected="false" tabindex="-1">Breakfast</button>
     </div>
 
     <div class="menu-panels">
 
-      <div class="menu-panel is-active" id="menu-apps">
+      <div class="menu-panel is-active" id="menu-apps" role="tabpanel" aria-labelledby="tab-menu-apps" tabindex="0">
         <ul class="menu-list">
-          <li>
-            <div>
-              <p class="name">Fried Pickle Bombs</p>
-              <p class="desc">5 breaded cream-cheese stuffed pickle bombs, served with ranch for dipping.</p>
-            </div>
-            <span class="price">$7.99</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Nachos</p>
-              <p class="desc">Beef or chicken nachos topped with homemade queso, lettuce, tomato, sour cream and salsa.</p>
-            </div>
-            <span class="price">$13.99</span>
-          </li>
           <li>
             <div>
               <p class="name">Buffalo Queso Fries</p>
@@ -239,14 +230,14 @@
               <p class="name">Chicken Strips &amp; Fries</p>
               <p class="desc">Four hand-breaded crispy chicken strips, served with fries and your choice of dipping sauce.</p>
             </div>
-            <span class="price">$10.99</span>
+            <span class="price">$11.99</span>
           </li>
           <li>
             <div>
               <p class="name">Hot Honey Strips</p>
-              <p class="desc">Four hand-breaded chicken strips tossed in our signature hot honey sauce, with fries and dipping sauce.</p>
+              <p class="desc">Four hand-breaded chicken strips tossed in our signature hot honey sauce, with fries and your choice of dipping sauce.</p>
             </div>
-            <span class="price">$10.99</span>
+            <span class="price">$11.99</span>
           </li>
           <li>
             <div>
@@ -260,11 +251,18 @@
               <p class="name">Crab Rangoon</p>
               <p class="desc">Fried wontons stuffed with cream cheese and crab mix, served with sweet chili sauce.</p>
             </div>
-            <span class="price">$9.99</span>
+            <span class="price">$10.99</span>
           </li>
           <li>
             <div>
-              <p class="name">Garlic Parmesan Mushrooms</p>
+              <p class="name">Pretzel Bites</p>
+              <p class="desc">10 pretzel bites served with queso for dipping.</p>
+            </div>
+            <span class="price">$10.99</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Breaded Garlic Parmesan Mushrooms</p>
               <p class="desc">Battered and fried mushrooms tossed in garlic butter with parmesan, served with ranch.</p>
             </div>
             <span class="price">$9.99</span>
@@ -272,47 +270,62 @@
           <li>
             <div>
               <p class="name">Pub Tacos</p>
-              <p class="desc">3 large beef tacos topped with cheese, lettuce, taco sauce, served with chips and salsa.</p>
+              <p class="desc">4 large beef tacos topped with cheese, lettuce and taco sauce.</p>
             </div>
             <span class="price">$9.99</span>
           </li>
           <li>
             <div>
               <p class="name">Wings</p>
-              <p class="desc">Fried chicken wings in your choice of sauce: mild, hot, or hot honey.</p>
+              <p class="desc">Fried chicken wings in your choice of sauce: mild, hot or hot honey.</p>
             </div>
             <span class="price">$13.99</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Quesadilla</p>
+              <p class="desc">Cheese $9.99 · Chicken $12.99 · Buffalo $12.99. Served with salsa and sour cream.</p>
+            </div>
+            <span class="price">From $9.99</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Mozzarella Cheese Sticks</p>
+              <p class="desc">Served with marinara for dipping.</p>
+            </div>
+            <span class="price">$10.99</span>
           </li>
         </ul>
       </div>
 
-      <div class="menu-panel" id="menu-salads">
+      <div class="menu-panel" id="menu-salads" role="tabpanel" aria-labelledby="tab-menu-salads" tabindex="0">
         <ul class="menu-list">
           <li>
             <div>
               <p class="name">Cobb Salad</p>
               <p class="desc">Romaine topped with seasoned grilled chicken, crispy bacon, hardboiled egg, Provel, tomato and housemade croutons. Choice of dressing.</p>
             </div>
-            <span class="price">$12.99</span>
+            <span class="price">$13.99</span>
           </li>
           <li>
             <div>
               <p class="name">Buffalo Chicken Salad</p>
-              <p class="desc">Grilled or fried chicken over romaine with tomato, Provel and croutons, drizzled with buffalo sauce and ranch.</p>
+              <p class="desc">Grilled or fried chicken over romaine with tomato, Provel and housemade croutons, drizzled with buffalo sauce and ranch.</p>
             </div>
-            <span class="price">$12.99</span>
+            <span class="price">$13.99</span>
           </li>
           <li>
             <div>
               <p class="name">Chicken Caesar Salad</p>
               <p class="desc">Grilled chicken, romaine, parmesan and housemade croutons with Caesar dressing.</p>
             </div>
-            <span class="price">$12.99</span>
+            <span class="price">$13.99</span>
           </li>
+          <li class="menu-list-note">Dressings: 1000 Island, raspberry vinaigrette, Caesar, blue cheese, honey mustard, housemade ranch or housemade Italian.</li>
         </ul>
       </div>
 
-      <div class="menu-panel" id="menu-sand">
+      <div class="menu-panel" id="menu-sand" role="tabpanel" aria-labelledby="tab-menu-sand" tabindex="0">
         <ul class="menu-list">
           <li>
             <div>
@@ -338,7 +351,7 @@
           <li>
             <div>
               <p class="name">Cajun Chicken Sandwich</p>
-              <p class="desc">Grilled chicken dusted with Cajun seasoning, topped with provolone on a brioche bun. Chipotle ranch for dipping.</p>
+              <p class="desc">Grilled chicken dusted with Cajun seasoning, topped with provolone on a toasted brioche bun. Chipotle ranch for dipping.</p>
             </div>
             <span class="price">$13.99</span>
           </li>
@@ -349,11 +362,32 @@
             </div>
             <span class="price">$13.99</span>
           </li>
-          <li class="menu-list-note">★ Served with tots or fries · onion rings or side salad +$1</li>
+          <li>
+            <div>
+              <p class="name">Crispy Chicken Caesar Sandwich</p>
+              <p class="desc">Crispy hand-breaded chicken topped with a small tossed Caesar salad on a buttered brioche bun.</p>
+            </div>
+            <span class="price">$13.99</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Grilled Chicken Club</p>
+              <p class="desc">Grilled chicken breast with pepperjack, bacon, lettuce and tomato on a brioche bun.</p>
+            </div>
+            <span class="price">$13.99</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Signature Fried Fish</p>
+              <p class="desc">Signature fried fish sandwich served with tartar sauce.</p>
+            </div>
+            <span class="price">Ask for price</span>
+          </li>
+          <li class="menu-list-note">★ Served with tater tots or fries · Onion rings or side salad +$2.99</li>
         </ul>
       </div>
 
-      <div class="menu-panel" id="menu-wraps">
+      <div class="menu-panel" id="menu-wraps" role="tabpanel" aria-labelledby="tab-menu-wraps" tabindex="0">
         <ul class="menu-list">
           <li>
             <div>
@@ -365,7 +399,7 @@
           <li>
             <div>
               <p class="name">Buffalo Chicken Wrap</p>
-              <p class="desc">Fried or grilled chicken tossed in mild buffalo, lettuce and tomato in a flour tortilla. Ranch on the side.</p>
+              <p class="desc">Fried or grilled chicken tossed in mild buffalo sauce, lettuce and tomato in a flour tortilla. Ranch on the side.</p>
             </div>
             <span class="price">$13.99</span>
           </li>
@@ -376,17 +410,25 @@
             </div>
             <span class="price">$13.99</span>
           </li>
+          <li>
+            <div>
+              <p class="name">Bad MOFO Wrap</p>
+              <p class="desc">Roast beef, hand-breaded crispy chicken, bacon, a mozzarella cheese stick, tater tots and chipotle ranch in a flour tortilla.</p>
+            </div>
+            <span class="price">$13.99</span>
+          </li>
+          <li class="menu-list-note">★ Served with tater tots or fries · Onion rings or side salad +$2.99</li>
         </ul>
       </div>
 
-      <div class="menu-panel" id="menu-burg">
+      <div class="menu-panel" id="menu-burg" role="tabpanel" aria-labelledby="tab-menu-burg" tabindex="0">
         <ul class="menu-list">
           <li>
             <div>
               <p class="name">Classic Smash Burger</p>
-              <p class="desc">Classic juicy smashed beef patties. Lettuce, tomato, pickle &amp; onion on request. Add cheese $1 · add bacon $1.</p>
+              <p class="desc">Classic juicy smashed beef patties. Single $10.99 · Double $11.99 · Triple $12.99. Lettuce, tomato, pickles and onion on request. Add cheese $1 · Add bacon $1.</p>
             </div>
-            <span class="price">$10.99 / $11.99 / $12.99</span>
+            <span class="price">From $10.99</span>
           </li>
           <li>
             <div>
@@ -405,7 +447,7 @@
           <li>
             <div>
               <p class="name">Frisco Melt</p>
-              <p class="desc">Two juicy beef patties with American &amp; Swiss, topped with Frisco sauce on sourdough.</p>
+              <p class="desc">Two juicy beef patties with American and Swiss, topped with Frisco sauce on sourdough.</p>
             </div>
             <span class="price">$13.99</span>
           </li>
@@ -419,12 +461,222 @@
           <li>
             <div>
               <p class="name">Spicy Smash Burger</p>
-              <p class="desc">Two patties topped with pepperjack, candied jalapeños, applewood bacon and chipotle ranch.</p>
+              <p class="desc">Two patties topped with pepperjack, candied jalapeños, applewood-smoked bacon and chipotle ranch.</p>
             </div>
             <span class="price">$13.99</span>
           </li>
-          <li class="menu-list-note">★ Served with tots or fries · onion rings or side salad +$1</li>
+          <li>
+            <div>
+              <p class="name">Super Bacon Cheeseburger</p>
+              <p class="desc">Double patty with American cheese, 4 strips of bacon and housemade bacon spread.</p>
+            </div>
+            <span class="price">$13.99</span>
+          </li>
+          <li class="menu-list-note">★ Served with tater tots or fries · Onion rings or side salad +$2.99</li>
         </ul>
+      </div>
+
+      <div class="menu-panel" id="menu-breakfast" role="tabpanel" aria-labelledby="tab-menu-breakfast" tabindex="0">
+        <h3 class="menu-group-title">Plates</h3>
+        <ul class="menu-list">
+          <li>
+            <div>
+              <p class="name">The Traditional</p>
+              <p class="desc">2 eggs any style, your choice of bacon or sausage, home fries and your choice of toast.</p>
+            </div>
+            <span class="price">$10.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">The Troy Big Breakfast</p>
+              <p class="desc">2 eggs any style, your choice of bacon or sausage, pancakes or French toast sticks, home fries and your choice of toast.</p>
+            </div>
+            <span class="price">$12.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Cheese Omelet</p>
+              <p class="desc">Shredded Provel cheese blend, served with home fries and your choice of toast.</p>
+            </div>
+            <span class="price">$9.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Veggie Omelet</p>
+              <p class="desc">Onions, green peppers, mushrooms and shredded Provel cheese blend, served with home fries and your choice of toast.</p>
+            </div>
+            <span class="price">$10.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Mega Meat Omelet</p>
+              <p class="desc">Ham, bacon, sausage and shredded Provel blend, served with home fries and your choice of toast.</p>
+            </div>
+            <span class="price">$11.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Ultimate Omelet</p>
+              <p class="desc">Ham, bacon, sausage, onions, green peppers, mushrooms and shredded Provel blend, served with home fries and your choice of toast.</p>
+            </div>
+            <span class="price">$12.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Biscuits &amp; Gravy</p>
+              <p class="desc">2 buttermilk biscuits topped with scratch-made sausage gravy.</p>
+            </div>
+            <span class="price">$6.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Belgian Waffle</p>
+              <p class="desc">1 giant freshly made Belgian waffle topped with your choice of strawberries, blueberries or whipped cream.</p>
+            </div>
+            <span class="price">$8.29</span>
+          </li>
+        </ul>
+
+        <h3 class="menu-group-title">Sandwiches, Bowls &amp; Burritos</h3>
+        <ul class="menu-list">
+          <li>
+            <div>
+              <p class="name">Breakfast Sandwich</p>
+              <p class="desc">Fried egg, American cheese and your choice of bacon or sausage on a brioche bun, served with home fries.</p>
+            </div>
+            <span class="price">$12.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Classic Breakfast Bowl</p>
+              <p class="desc">Home fries topped with scrambled eggs, cheese and your choice of protein. Topped with your choice of sausage gravy or house queso.</p>
+            </div>
+            <span class="price">$11.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Veggie Bowl</p>
+              <p class="desc">Home fries topped with scrambled eggs, spinach, mushrooms, green peppers, onions and cheese. Topped with your choice of sausage gravy or house queso.</p>
+            </div>
+            <span class="price">$10.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Breakfast Burrito</p>
+              <p class="desc">Flour tortilla stuffed with home fries, scrambled eggs, cheese and your choice of protein, topped with house queso and pico de gallo. Served with home fries.</p>
+            </div>
+            <span class="price">$12.99</span>
+          </li>
+        </ul>
+
+        <h3 class="menu-group-title">Kids Breakfast</h3>
+        <p class="menu-group-note">For ages 12 &amp; under. Each meal includes home fries and a drink.</p>
+        <ul class="menu-list">
+          <li>
+            <div>
+              <p class="name">The Junior</p>
+              <p class="desc">1 egg your way with your choice of sausage or bacon.</p>
+            </div>
+            <span class="price">$7.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">French Toast Sticks</p>
+              <p class="desc">3 French toast sticks with your choice of sausage or bacon.</p>
+            </div>
+            <span class="price">$7.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Pancake</p>
+              <p class="desc">Your choice of plain or chocolate chip, with sausage or bacon.</p>
+            </div>
+            <span class="price">$7.29</span>
+          </li>
+        </ul>
+
+        <h3 class="menu-group-title">À La Carte</h3>
+        <ul class="menu-list">
+          <li>
+            <div>
+              <p class="name">Sausage or Bacon</p>
+              <p class="desc">2 pieces of either.</p>
+            </div>
+            <span class="price">$3.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Home Fries</p>
+            </div>
+            <span class="price">$3.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Buttermilk Pancakes</p>
+              <p class="desc">Your choice of plain or chocolate chip.</p>
+            </div>
+            <span class="price">$2.29</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Egg Your Way</p>
+              <p class="desc">1 egg, how you want it.</p>
+            </div>
+            <span class="price">$1.99</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">French Toast Sticks</p>
+              <p class="desc">4 French toast sticks.</p>
+            </div>
+            <span class="price">$4.29</span>
+          </li>
+        </ul>
+
+        <h3 class="menu-group-title">Beverages</h3>
+        <ul class="menu-list">
+          <li>
+            <div>
+              <p class="name">Soft Drinks</p>
+            </div>
+            <span class="price">$2.89</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Juice</p>
+              <p class="desc">Orange, cranberry or apple.</p>
+            </div>
+            <span class="price">$3.75</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Milk</p>
+              <p class="desc">Regular or chocolate.</p>
+            </div>
+            <span class="price">$4.00</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">House Blend Coffee</p>
+            </div>
+            <span class="price">$2.89</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Bloody Mary</p>
+            </div>
+            <span class="price">$5.00</span>
+          </li>
+          <li>
+            <div>
+              <p class="name">Mimosa</p>
+              <p class="desc">Orange, cranberry or apple.</p>
+            </div>
+            <span class="price">$4.00</span>
+          </li>
+        </ul>
+
+        <p class="menu-advisory">Consumer advisory: Consumption of undercooked meat, poultry, eggs or seafood may increase the risk of foodborne illness. Alert your server if you have special dietary requirements.</p>
       </div>
 
     </div>
@@ -548,7 +800,7 @@
   </div>
 </footer>
 
-<script src="../assets/js/nav.js" defer></script>
+<script src="../assets/js/nav.js?v=20261016-menus" defer></script>
 <script src="../assets/js/slideshow.js" defer></script>
 <script src="../assets/js/parallax.js" defer></script>
 </body>

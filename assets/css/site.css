@@ -872,6 +872,21 @@ body.splash-entered .video-landing {
   color: rgba(245,232,208,.5);
 }
 
+.menu-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.menu-downloads .btn {
+  flex: 0 1 240px;
+  max-width: 100%;
+  padding: 14px 20px;
+  letter-spacing: .14em;
+  white-space: normal;
+}
+
 .menu-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -891,6 +906,7 @@ body.splash-entered .video-landing {
   border: 1px solid rgba(168,95,29,.3);
   border-radius: 30px;
   padding: 8px 22px;
+  min-height: 44px;
   cursor: pointer;
   transition: background .2s ease, color .2s ease, border-color .2s ease;
 }
@@ -904,6 +920,13 @@ body.splash-entered .video-landing {
   border-color: var(--rust-bd);
 }
 
+.menu-tab:focus-visible,
+.menu-downloads .btn:focus-visible,
+.menu-panel:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
 .menu-panels {
   /* panels managed by JS */
 }
@@ -915,13 +938,35 @@ body.splash-entered .video-landing {
   display: block;
 }
 
+.menu-group-title {
+  color: var(--cream);
+  line-height: 1.3;
+  margin: 36px 0 16px;
+}
+
+.menu-group-title:first-child {
+  margin-top: 0;
+}
+
+.menu-group-note,
+.menu-advisory {
+  color: var(--cream-2);
+  font-size: .85rem;
+}
+
+.menu-advisory {
+  max-width: 760px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+
 .menu-list {
   list-style: none;
   padding: 2px;
   margin: 0;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 2px;
   background: rgba(212,166,74,.18);
   border: 1px solid rgba(212,166,74,.5);

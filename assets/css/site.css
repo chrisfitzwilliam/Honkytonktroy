@@ -1061,6 +1061,59 @@ body.splash-entered .video-landing {
   margin-top: 24px;
 }
 
+/* ---------- MAIN MENU: OPEN DARK ---------- */
+#menu .menu-list {
+  gap: 0 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  overflow: visible;
+}
+#menu .menu-list li {
+  padding: 25px 0;
+  gap: 24px;
+  border: 0;
+  border-bottom: 1px solid rgba(241,218,186,.22);
+  border-radius: 0;
+  background: none;
+  transition: none;
+}
+#menu .menu-list .name {
+  margin: 0 0 8px;
+  color: #fff3df;
+  font: 600 1.45rem/1.2 'Barlow Condensed', sans-serif;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+#menu .menu-list .desc {
+  max-width: 53ch;
+  color: #ccb8aa;
+  font-size: .9rem;
+  line-height: 1.65;
+  font-style: normal;
+}
+#menu .menu-list .price {
+  color: #e1b866;
+  font: 500 1.25rem/1.2 'Barlow Condensed', sans-serif;
+  white-space: nowrap;
+}
+#menu .menu-list .menu-list-note {
+  display: block;
+  padding: 20px 0 !important;
+  background: none !important;
+  color: #ccb8aa;
+  font-size: .8rem;
+  letter-spacing: .04em;
+  line-height: 1.7;
+}
+#menu .menu-note { color: #baa28f; letter-spacing: .08em; }
+@media (max-width: 640px) {
+  #menu .menu-list li { gap: 16px; padding: 23px 0; }
+  #menu .menu-list .name { font-size: 1.3rem; }
+}
+
 /* ---------- BREAKFAST ---------- */
 .breakfast-menu {
   background: var(--bg);

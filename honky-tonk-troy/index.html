@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="../images/11.png">
   <link rel="preload" as="image" href="../images/bg-crowd.jpg">
-  <link rel="stylesheet" href="../assets/css/site.css?v=20261016-menus">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20261016-menu-layout">
   <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
 </head>
 <body>
@@ -189,12 +189,14 @@
 <section class="menu section-pad" id="menu">
   <div class="container">
     <div class="menu-hd">
-      <span class="kicker">Kitchen menu</span>
-      <h2>The Menu.</h2>
-      <p class="section-sub">dine in · carry out · come hungry</p>
-      <div class="menu-downloads" aria-label="Printable menus">
-        <a class="btn" href="../assets/menus/honky-tonk-troy-menu.pdf" target="_blank" rel="noopener">Main Menu (PDF)<span class="sr-only"> — opens in a new tab</span></a>
-        <a class="btn" href="../assets/menus/honky-tonk-troy-breakfast-menu.pdf" target="_blank" rel="noopener">Breakfast Menu (PDF)<span class="sr-only"> — opens in a new tab</span></a>
+      <div>
+        <span class="kicker">Kitchen menu</span>
+        <h2>Main Menu.</h2>
+        <p class="section-sub">dine in · carry out · come hungry</p>
+      </div>
+      <div class="menu-actions">
+        <a class="menu-link" href="../assets/menus/honky-tonk-troy-menu.pdf" target="_blank" rel="noopener">Main menu PDF <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M7 7h10v10"/></svg><span class="sr-only"> — opens in a new tab</span></a>
+        <a class="menu-link" href="#breakfast">Breakfast menu <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
       </div>
     </div>
 
@@ -204,7 +206,6 @@
       <button class="menu-tab" id="tab-menu-sand" data-target="menu-sand" type="button" role="tab" aria-controls="menu-sand" aria-selected="false" tabindex="-1">Sandwiches</button>
       <button class="menu-tab" id="tab-menu-wraps" data-target="menu-wraps" type="button" role="tab" aria-controls="menu-wraps" aria-selected="false" tabindex="-1">Wraps</button>
       <button class="menu-tab" id="tab-menu-burg" data-target="menu-burg" type="button" role="tab" aria-controls="menu-burg" aria-selected="false" tabindex="-1">Burgers</button>
-      <button class="menu-tab" id="tab-menu-breakfast" data-target="menu-breakfast" type="button" role="tab" aria-controls="menu-breakfast" aria-selected="false" tabindex="-1">Breakfast</button>
     </div>
 
     <div class="menu-panels">
@@ -476,212 +477,227 @@
         </ul>
       </div>
 
-      <div class="menu-panel" id="menu-breakfast" role="tabpanel" aria-labelledby="tab-menu-breakfast" tabindex="0">
-        <h3 class="menu-group-title">Plates</h3>
-        <ul class="menu-list">
-          <li>
-            <div>
-              <p class="name">The Traditional</p>
-              <p class="desc">2 eggs any style, your choice of bacon or sausage, home fries and your choice of toast.</p>
-            </div>
-            <span class="price">$10.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">The Troy Big Breakfast</p>
-              <p class="desc">2 eggs any style, your choice of bacon or sausage, pancakes or French toast sticks, home fries and your choice of toast.</p>
-            </div>
-            <span class="price">$12.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Cheese Omelet</p>
-              <p class="desc">Shredded Provel cheese blend, served with home fries and your choice of toast.</p>
-            </div>
-            <span class="price">$9.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Veggie Omelet</p>
-              <p class="desc">Onions, green peppers, mushrooms and shredded Provel cheese blend, served with home fries and your choice of toast.</p>
-            </div>
-            <span class="price">$10.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Mega Meat Omelet</p>
-              <p class="desc">Ham, bacon, sausage and shredded Provel blend, served with home fries and your choice of toast.</p>
-            </div>
-            <span class="price">$11.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Ultimate Omelet</p>
-              <p class="desc">Ham, bacon, sausage, onions, green peppers, mushrooms and shredded Provel blend, served with home fries and your choice of toast.</p>
-            </div>
-            <span class="price">$12.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Biscuits &amp; Gravy</p>
-              <p class="desc">2 buttermilk biscuits topped with scratch-made sausage gravy.</p>
-            </div>
-            <span class="price">$6.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Belgian Waffle</p>
-              <p class="desc">1 giant freshly made Belgian waffle topped with your choice of strawberries, blueberries or whipped cream.</p>
-            </div>
-            <span class="price">$8.29</span>
-          </li>
-        </ul>
-
-        <h3 class="menu-group-title">Sandwiches, Bowls &amp; Burritos</h3>
-        <ul class="menu-list">
-          <li>
-            <div>
-              <p class="name">Breakfast Sandwich</p>
-              <p class="desc">Fried egg, American cheese and your choice of bacon or sausage on a brioche bun, served with home fries.</p>
-            </div>
-            <span class="price">$12.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Classic Breakfast Bowl</p>
-              <p class="desc">Home fries topped with scrambled eggs, cheese and your choice of protein. Topped with your choice of sausage gravy or house queso.</p>
-            </div>
-            <span class="price">$11.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Veggie Bowl</p>
-              <p class="desc">Home fries topped with scrambled eggs, spinach, mushrooms, green peppers, onions and cheese. Topped with your choice of sausage gravy or house queso.</p>
-            </div>
-            <span class="price">$10.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Breakfast Burrito</p>
-              <p class="desc">Flour tortilla stuffed with home fries, scrambled eggs, cheese and your choice of protein, topped with house queso and pico de gallo. Served with home fries.</p>
-            </div>
-            <span class="price">$12.99</span>
-          </li>
-        </ul>
-
-        <h3 class="menu-group-title">Kids Breakfast</h3>
-        <p class="menu-group-note">For ages 12 &amp; under. Each meal includes home fries and a drink.</p>
-        <ul class="menu-list">
-          <li>
-            <div>
-              <p class="name">The Junior</p>
-              <p class="desc">1 egg your way with your choice of sausage or bacon.</p>
-            </div>
-            <span class="price">$7.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">French Toast Sticks</p>
-              <p class="desc">3 French toast sticks with your choice of sausage or bacon.</p>
-            </div>
-            <span class="price">$7.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Pancake</p>
-              <p class="desc">Your choice of plain or chocolate chip, with sausage or bacon.</p>
-            </div>
-            <span class="price">$7.29</span>
-          </li>
-        </ul>
-
-        <h3 class="menu-group-title">À La Carte</h3>
-        <ul class="menu-list">
-          <li>
-            <div>
-              <p class="name">Sausage or Bacon</p>
-              <p class="desc">2 pieces of either.</p>
-            </div>
-            <span class="price">$3.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Home Fries</p>
-            </div>
-            <span class="price">$3.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Buttermilk Pancakes</p>
-              <p class="desc">Your choice of plain or chocolate chip.</p>
-            </div>
-            <span class="price">$2.29</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Egg Your Way</p>
-              <p class="desc">1 egg, how you want it.</p>
-            </div>
-            <span class="price">$1.99</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">French Toast Sticks</p>
-              <p class="desc">4 French toast sticks.</p>
-            </div>
-            <span class="price">$4.29</span>
-          </li>
-        </ul>
-
-        <h3 class="menu-group-title">Beverages</h3>
-        <ul class="menu-list">
-          <li>
-            <div>
-              <p class="name">Soft Drinks</p>
-            </div>
-            <span class="price">$2.89</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Juice</p>
-              <p class="desc">Orange, cranberry or apple.</p>
-            </div>
-            <span class="price">$3.75</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Milk</p>
-              <p class="desc">Regular or chocolate.</p>
-            </div>
-            <span class="price">$4.00</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">House Blend Coffee</p>
-            </div>
-            <span class="price">$2.89</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Bloody Mary</p>
-            </div>
-            <span class="price">$5.00</span>
-          </li>
-          <li>
-            <div>
-              <p class="name">Mimosa</p>
-              <p class="desc">Orange, cranberry or apple.</p>
-            </div>
-            <span class="price">$4.00</span>
-          </li>
-        </ul>
-
-        <p class="menu-advisory">Consumer advisory: Consumption of undercooked meat, poultry, eggs or seafood may increase the risk of foodborne illness. Alert your server if you have special dietary requirements.</p>
-      </div>
 
     </div>
 
     <p class="menu-note">★ Menu items &amp; prices subject to change · Call for daily specials</p>
+  </div>
+</section>
+
+<!-- ===================== BREAKFAST ===================== -->
+<section class="breakfast-menu section-pad" id="breakfast" data-nav-section="menu" aria-labelledby="breakfast-heading">
+  <div class="container">
+    <div class="menu-hd">
+      <div>
+        <span class="kicker">Honky Tonk Troy</span>
+        <h2 id="breakfast-heading">Breakfast Menu.</h2>
+      </div>
+      <div class="menu-actions">
+        <a class="menu-link" href="../assets/menus/honky-tonk-troy-breakfast-menu.pdf" target="_blank" rel="noopener">Breakfast menu PDF <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M7 7h10v10"/></svg><span class="sr-only"> — opens in a new tab</span></a>
+      </div>
+    </div>
+
+    <h3 class="menu-group-title">Plates</h3>
+    <ul class="menu-list">
+      <li>
+        <div>
+          <p class="name">The Traditional</p>
+          <p class="desc">2 eggs any style, your choice of bacon or sausage, home fries and your choice of toast.</p>
+        </div>
+        <span class="price">$10.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">The Troy Big Breakfast</p>
+          <p class="desc">2 eggs any style, your choice of bacon or sausage, pancakes or French toast sticks, home fries and your choice of toast.</p>
+        </div>
+        <span class="price">$12.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Cheese Omelet</p>
+          <p class="desc">Shredded Provel cheese blend, served with home fries and your choice of toast.</p>
+        </div>
+        <span class="price">$9.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Veggie Omelet</p>
+          <p class="desc">Onions, green peppers, mushrooms and shredded Provel cheese blend, served with home fries and your choice of toast.</p>
+        </div>
+        <span class="price">$10.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Mega Meat Omelet</p>
+          <p class="desc">Ham, bacon, sausage and shredded Provel blend, served with home fries and your choice of toast.</p>
+        </div>
+        <span class="price">$11.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Ultimate Omelet</p>
+          <p class="desc">Ham, bacon, sausage, onions, green peppers, mushrooms and shredded Provel blend, served with home fries and your choice of toast.</p>
+        </div>
+        <span class="price">$12.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Biscuits &amp; Gravy</p>
+          <p class="desc">2 buttermilk biscuits topped with scratch-made sausage gravy.</p>
+        </div>
+        <span class="price">$6.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Belgian Waffle</p>
+          <p class="desc">1 giant freshly made Belgian waffle topped with your choice of strawberries, blueberries or whipped cream.</p>
+        </div>
+        <span class="price">$8.29</span>
+      </li>
+    </ul>
+
+    <h3 class="menu-group-title">Sandwiches, Bowls &amp; Burritos</h3>
+    <ul class="menu-list">
+      <li>
+        <div>
+          <p class="name">Breakfast Sandwich</p>
+          <p class="desc">Fried egg, American cheese and your choice of bacon or sausage on a brioche bun, served with home fries.</p>
+        </div>
+        <span class="price">$12.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Classic Breakfast Bowl</p>
+          <p class="desc">Home fries topped with scrambled eggs, cheese and your choice of protein. Topped with your choice of sausage gravy or house queso.</p>
+        </div>
+        <span class="price">$11.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Veggie Bowl</p>
+          <p class="desc">Home fries topped with scrambled eggs, spinach, mushrooms, green peppers, onions and cheese. Topped with your choice of sausage gravy or house queso.</p>
+        </div>
+        <span class="price">$10.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Breakfast Burrito</p>
+          <p class="desc">Flour tortilla stuffed with home fries, scrambled eggs, cheese and your choice of protein, topped with house queso and pico de gallo. Served with home fries.</p>
+        </div>
+        <span class="price">$12.99</span>
+      </li>
+    </ul>
+
+    <h3 class="menu-group-title">Kids Breakfast</h3>
+    <p class="menu-group-note">For ages 12 &amp; under. Each meal includes home fries and a drink.</p>
+    <ul class="menu-list">
+      <li>
+        <div>
+          <p class="name">The Junior</p>
+          <p class="desc">1 egg your way with your choice of sausage or bacon.</p>
+        </div>
+        <span class="price">$7.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">French Toast Sticks</p>
+          <p class="desc">3 French toast sticks with your choice of sausage or bacon.</p>
+        </div>
+        <span class="price">$7.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Pancake</p>
+          <p class="desc">Your choice of plain or chocolate chip, with sausage or bacon.</p>
+        </div>
+        <span class="price">$7.29</span>
+      </li>
+    </ul>
+
+    <h3 class="menu-group-title">À La Carte</h3>
+    <ul class="menu-list">
+      <li>
+        <div>
+          <p class="name">Sausage or Bacon</p>
+          <p class="desc">2 pieces of either.</p>
+        </div>
+        <span class="price">$3.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Home Fries</p>
+        </div>
+        <span class="price">$3.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Buttermilk Pancakes</p>
+          <p class="desc">Your choice of plain or chocolate chip.</p>
+        </div>
+        <span class="price">$2.29</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Egg Your Way</p>
+          <p class="desc">1 egg, how you want it.</p>
+        </div>
+        <span class="price">$1.99</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">French Toast Sticks</p>
+          <p class="desc">4 French toast sticks.</p>
+        </div>
+        <span class="price">$4.29</span>
+      </li>
+    </ul>
+
+    <h3 class="menu-group-title">Beverages</h3>
+    <ul class="menu-list">
+      <li>
+        <div>
+          <p class="name">Soft Drinks</p>
+        </div>
+        <span class="price">$2.89</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Juice</p>
+          <p class="desc">Orange, cranberry or apple.</p>
+        </div>
+        <span class="price">$3.75</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Milk</p>
+          <p class="desc">Regular or chocolate.</p>
+        </div>
+        <span class="price">$4.00</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">House Blend Coffee</p>
+        </div>
+        <span class="price">$2.89</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Bloody Mary</p>
+        </div>
+        <span class="price">$5.00</span>
+      </li>
+      <li>
+        <div>
+          <p class="name">Mimosa</p>
+          <p class="desc">Orange, cranberry or apple.</p>
+        </div>
+        <span class="price">$4.00</span>
+      </li>
+    </ul>
+
+    <p class="menu-advisory">Consumer advisory: Consumption of undercooked meat, poultry, eggs or seafood may increase the risk of foodborne illness. Alert your server if you have special dietary requirements.</p>
+    <p class="menu-note">Menu items &amp; prices subject to change.</p>
   </div>
 </section>
 
@@ -800,7 +816,7 @@
   </div>
 </footer>
 
-<script src="../assets/js/nav.js?v=20261016-menus" defer></script>
+<script src="../assets/js/nav.js?v=20261016-menu-layout" defer></script>
 <script src="../assets/js/slideshow.js" defer></script>
 <script src="../assets/js/parallax.js" defer></script>
 </body>

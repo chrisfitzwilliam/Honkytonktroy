@@ -27,19 +27,23 @@
     const sectionIds = Array.from(new Set(
       Array.from(navLinks).map(a => a.dataset.section)
     ));
-    const sections = sectionIds
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
+    const sections = [
+      ...sectionIds.map(id => document.getElementById(id)),
+      ...document.querySelectorAll('[data-nav-section]')
+    ].filter(Boolean);
 
     if (sections.length && 'IntersectionObserver' in window) {
       const visible = new Map();
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
-          visible.set(e.target.id, e.intersectionRatio);
+          visible.set(e.target.id, {
+            ratio: e.intersectionRatio,
+            section: e.target.dataset.navSection || e.target.id
+          });
         });
         let best = null, bestRatio = 0;
-        visible.forEach((ratio, id) => {
-          if (ratio > bestRatio) { best = id; bestRatio = ratio; }
+        visible.forEach(({ ratio, section }) => {
+          if (ratio > bestRatio) { best = section; bestRatio = ratio; }
         });
         navLinks.forEach(a => {
           a.classList.toggle('is-current', a.dataset.section === best);

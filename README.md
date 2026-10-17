@@ -56,15 +56,22 @@ Content decisions:
 - Signature Fried Fish has no price in the supplied PDF. The user confirmed **Ask for price** for the website.
 - Sandwiches, wraps and burgers include tots or fries; onion rings or a side salad cost an additional **$2.99**.
 - Pub Tacos are **4 tacos**; the current PDF does not include the older chips-and-salsa description.
-- Breakfast is served **Sundays only, 9 am–12 pm**, confirmed by the user after the menu rollout.
-- Sunday business hours are **9 am–close**. Monday–Thursday remain 11 am–9 pm; Friday–Saturday remain 11 am–1 am.
 - All 60 menu entries and their prices were preserved when applying the approved design.
 
-## Music and happy hour
+## Current schedule — confirmed October 16, 2026
 
-- Use **Live Country Music** for the country-music feature, event titles, tagline and related copy.
-- Friday and Saturday live country music starts at **8 pm**.
-- Happy Hour runs **Monday–Friday, 2–5 pm**.
+Use **Live Country Music** for the country-music feature, event titles, tagline, image alternative text and related copy.
+
+| Offering | Days | Hours |
+| --- | --- | --- |
+| Happy Hour | Monday–Friday | **2–5 pm** |
+| Live Country Music | Friday and Saturday | **Starts at 8 pm** |
+| Breakfast | Sundays only | **9 am–12 pm** |
+| Business hours | Sunday | **9 am–close** |
+| Business hours | Monday–Thursday | **11 am–9 pm** |
+| Business hours | Friday–Saturday | **11 am–1 am** |
+
+These values reflect the user's final corrections. Update the active page at `honky-tonk-troy/index.html`; the local design previews contain earlier snapshots. The user supplied the breakfast serving hours separately from the original PDFs.
 
 ## Local development
 
@@ -95,6 +102,8 @@ For menu changes, inspect desktop and phone layouts, switch all five categories,
 
 The approved rollout was checked in Chromium at 1440, 390 and 320 pixels. All five categories matched the Open Dark preview's computed styles, with no horizontal overflow. Breakfast remained visible and retained its styling. The three-option preview was also checked at 768 pixels. Live-page checks confirmed the published stylesheet, category switching and the fish price label.
 
+The later breakfast, business-hours and music updates were checked at desktop and phone widths. Live checks confirmed all six occurrences of "Live Country" were expanded to "Live Country Music," Friday/Saturday music starts at 8 pm, and Happy Hour is Monday–Friday, 2–5 pm. The final Happy Hour correction was verified live after deployment of `0ce0e42`.
+
 ## Deployment
 
 GitHub Pages publishes the repository root from `main`; `CNAME` configures `honkytonktroy.com`. Pushing `main` triggers the `pages-build-deployment` workflow.
@@ -108,12 +117,15 @@ gh run list --repo chrisfitzwilliam/Honkytonktroy --limit 3
 gh api repos/chrisfitzwilliam/Honkytonktroy/pages/builds/latest
 ```
 
-Menu rollout commits:
+Website content release history:
 
 | Commit | Change |
 | --- | --- |
 | `7e8f804` | Extracted the PDFs, updated the main menu and added breakfast content. |
 | `d18dfa2` | Moved breakfast into its own section and simplified category/PDF controls. |
 | `fd7f04a` | Applied the user-approved Open Dark item layout. |
+| `2e5190c` | Added Sunday-only breakfast, 9 am–12 pm, and Sunday business hours, 9 am–close. |
+| `a2a485d` | Expanded Live Country Music wording, set Friday/Saturday starts to 8 pm, and extended Happy Hour to Monday–Friday. |
+| `0ce0e42` | Applied the final Happy Hour time: Monday–Friday, 2–5 pm. |
 
-The Open Dark deployment was confirmed successful on October 16, 2026.
+The latest content release is `0ce0e42`. Its GitHub Pages deployment succeeded, and the corrected hours were verified on the live site on October 16, 2026. Later documentation commits may appear above it in the Git log.

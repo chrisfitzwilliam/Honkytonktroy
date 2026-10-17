@@ -1130,6 +1130,15 @@ body.splash-entered .video-landing {
   color: var(--muted);
 }
 
+.breakfast-hours {
+  margin: 0;
+  color: var(--rust);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
 .breakfast-menu .menu-link {
   color: var(--bg-dark);
   border-bottom-color: var(--muted);

@@ -56,7 +56,8 @@ Content decisions:
 - Signature Fried Fish has no price in the supplied PDF. The user confirmed **Ask for price** for the website.
 - Sandwiches, wraps and burgers include tots or fries; onion rings or a side salad cost an additional **$2.99**.
 - Pub Tacos are **4 tacos**; the current PDF does not include the older chips-and-salsa description.
-- The supplied breakfast menu gives no serving hours. No breakfast hours were added.
+- Breakfast is served **Sundays only, 9 am–12 pm**, confirmed by the user after the menu rollout.
+- Sunday business hours are **9 am–close**. Monday–Thursday remain 11 am–9 pm; Friday–Saturday remain 11 am–1 am.
 - All 60 menu entries and their prices were preserved when applying the approved design.
 
 ## Local development
@@ -75,7 +76,7 @@ The separate local comparison server in `../menu-previews/` also serves this che
 
 Edit menu content in `honky-tonk-troy/index.html` and styles in `assets/css/site.css`. Main-menu tabs use `.menu-tab[data-target]` and matching `.menu-panel` IDs. Keep their `aria-controls`, `aria-labelledby`, selected state and keyboard navigation consistent.
 
-Bump the stylesheet query in the main page after CSS changes. The current value is `site.css?v=20261016-open-dark`. Bump the script query when changing navigation JavaScript; it currently uses `nav.js?v=20261016-menu-layout`.
+Bump the stylesheet query in the main page after CSS changes. The current value is `site.css?v=20261016-breakfast-hours`. Bump the script query when changing navigation JavaScript; it currently uses `nav.js?v=20261016-menu-layout`.
 
 Useful checks:
 

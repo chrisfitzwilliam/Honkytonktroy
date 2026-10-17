@@ -60,6 +60,12 @@ Content decisions:
 - Sunday business hours are **9 am–close**. Monday–Thursday remain 11 am–9 pm; Friday–Saturday remain 11 am–1 am.
 - All 60 menu entries and their prices were preserved when applying the approved design.
 
+## Music and happy hour
+
+- Use **Live Country Music** for the country-music feature, event titles, tagline and related copy.
+- Friday and Saturday live country music starts at **8 pm**.
+- Happy Hour runs **Monday–Friday, 3–5 pm**.
+
 ## Local development
 
 From this checkout:

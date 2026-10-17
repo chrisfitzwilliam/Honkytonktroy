@@ -64,7 +64,7 @@ Content decisions:
 
 - Use **Live Country Music** for the country-music feature, event titles, tagline and related copy.
 - Friday and Saturday live country music starts at **8 pm**.
-- Happy Hour runs **Monday–Friday, 3–5 pm**.
+- Happy Hour runs **Monday–Friday, 2–5 pm**.
 
 ## Local development
 
